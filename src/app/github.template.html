@@ -1,0 +1,45 @@
+<div [hidden]='!isLoading'>
+    Loading...
+    <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</div>
+<div [hidden]="isLoading">
+
+
+    <!--User-->
+    <ul class="media-list">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object avatar" src="{{user.avatar_url}}" alt="{{user.name}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">@{{user.login }}</h4>
+                <br>
+                    <!--Followers-->
+                    <div class="media" *ngFor="let follower of followers">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object avatar" src="{{follower.avatar_url}}" alt="{{follower.name}}">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@{{follower.login }}</h4>
+                        </div>
+                    </div>
+                
+            </div>
+        </li>
+    </ul>
+    <!--<div class="media" *ngFor="let follower of result['followers']'">
+        <div class="media-left media-middle">
+            <a href="#">
+                <img class="media-object avatar" src="{{follower.avatar_url}}" alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{follower.login}}</h4>
+        </div>
+    </div>-->
+</div>
